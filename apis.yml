@@ -32,16 +32,16 @@ apis:
     properties:
       - type: Documentation
         url: https://orval.dev/overview
-      - type: Getting Started
+      - type: GettingStarted
         url: https://orval.dev/overview
-      - type: GitHub Repository
+      - type: GitHubRepository
         url: https://github.com/orval-labs/orval
 common:
   - type: Website
     url: https://orval.dev
   - type: Documentation
     url: https://orval.dev/overview
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/orval-labs/orval
   - type: Samples
     url: https://orval.dev/guides/react-query
