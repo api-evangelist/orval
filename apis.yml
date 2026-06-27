@@ -45,7 +45,7 @@ common:
     url: https://github.com/orval-labs/orval
   - type: Samples
     url: https://orval.dev/guides/react-query
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://orval.dev/llms.txt
 maintainers:
   - FN: Kin Lane
