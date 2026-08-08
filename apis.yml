@@ -1,41 +1,64 @@
 aid: orval
 name: Orval
 description: >-
-  Orval is an open source tool that generates TypeScript API clients, React
-  Query hooks, Angular services, and mock service workers from OpenAPI
-  specifications. It produces type-safe, framework-integrated code with
-  support for custom transformers and output formats.
+  Orval is an MIT-licensed open source code generator that turns any valid
+  OpenAPI v3 or Swagger v2 specification into type-safe TypeScript. From one
+  spec it emits HTTP request functions (Fetch by default, Axios optional),
+  TanStack Query hooks for React, Vue, Svelte, Solid and Angular, SWR hooks,
+  Angular HttpClient services, SolidStart primitives, Hono server templates,
+  Zod and Effect validation schemas, MSW handlers with Faker mock data, and
+  Model Context Protocol servers for agent integration. It ships as a CLI plus
+  a programmatic API, is configured through an orval.config.ts file with
+  per-project targets, transformers, hooks and output modes, and is distributed
+  on npm as `orval` alongside thirteen first-party `@orval/*` generator
+  packages and an official ghcr.io container image. Orval itself exposes no
+  hosted HTTP API — the specification is the input, and generated client code
+  is the product.
 type: Index
 accessModel:
-  pricing: freemium
-  onboarding: unknown
+  pricing: free
+  onboarding: self-service
   trial: false
-  try_now: false
-  public: false
-  label: Freemium
-  confidence: medium
+  try_now: true
+  public: true
+  label: Free
+  confidence: high
+  note: >-
+    MIT-licensed open source, installed from npm. No accounts, no keys, no paid
+    tier; funding is voluntary via OpenCollective.
   source:
-  - plans
-  generated: '2026-07-22'
-  method: derived
+  - https://github.com/orval-labs/orval/blob/master/LICENSE
+  - https://www.npmjs.com/package/orval
+  - https://orval.dev/playground
+  generated: '2026-08-06'
+  method: searched
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/orval.png
 tags:
   - Code Generation
   - OpenAPI
+  - Swagger
   - SDKs
   - TypeScript
+  - Developer Tools
+  - CLI
+  - Open Source
+  - Mocking
+  - Schema Validation
 url: >-
   https://raw.githubusercontent.com/api-evangelist/orval/refs/heads/main/apis.yml
 created: '2026-03-25'
-modified: '2026-03-25'
+modified: '2026-08-06'
 specificationVersion: '0.19'
 apis:
   - aid: orval:orval
     name: Orval
     description: >-
-      Orval generates TypeScript API clients, React Query hooks, Angular
-      services, and MSW mocks from OpenAPI specifications with type-safe,
-      framework-integrated output.
+      Orval generates TypeScript API clients, TanStack Query/SWR hooks, Angular
+      services, SolidStart primitives, Hono server handlers, Zod and Effect
+      schemas, MSW mocks, and MCP servers from OpenAPI v3 or Swagger v2
+      specifications with type-safe, framework-integrated output. It is a build
+      time code generator with a CLI and a programmatic API, not a hosted
+      service.
     humanURL: https://orval.dev
     tags:
       - Code Generation
@@ -43,9 +66,11 @@ apis:
       - TypeScript
     properties:
       - type: Documentation
-        url: https://orval.dev/overview
+        url: https://orval.dev/docs
       - type: GettingStarted
-        url: https://orval.dev/overview
+        url: https://orval.dev/docs/quick-start
+      - type: APIReference
+        url: https://orval.dev/docs/reference/cli
       - type: GitHubRepository
         url: https://github.com/orval-labs/orval
 common:
@@ -53,14 +78,69 @@ common:
     url: security/orval-domain-security.yml
   - type: Website
     url: https://orval.dev
+  - type: DeveloperPortal
+    url: https://orval.dev
   - type: Documentation
-    url: https://orval.dev/overview
+    url: https://orval.dev/docs
+  - type: APIReference
+    url: https://orval.dev/docs/reference/cli
+  - type: GettingStarted
+    url: https://orval.dev/docs/quick-start
   - type: GitHubOrganization
     url: https://github.com/orval-labs/orval
+  - type: Support
+    url: https://discord.gg/6fC2sjDU7w
+  - type: Support
+    url: https://github.com/orval-labs/orval/discussions
   - type: Samples
-    url: https://orval.dev/guides/react-query
+    url: https://orval.dev/docs/guides/react-query
   - type: LlmsText
     url: https://orval.dev/llms.txt
+  - type: LLMsTxt
+    url: llms/orval-llms.txt
+  - type: Packages
+    url: packages/orval-packages.yml
+  - type: CLI
+    url: cli/orval-cli.yml
+  - type: ChangeLog
+    url: changelog/orval-changelog.yml
+  - type: ChangeLog
+    url: https://github.com/orval-labs/orval/releases
+  - type: Lifecycle
+    url: lifecycle/orval-lifecycle.yml
+  - type: Deprecation
+    url: https://github.com/orval-labs/orval/blob/master/SECURITY.md#supported-versions
+  - type: VulnerabilityDisclosure
+    url: security/orval-vulnerability-disclosure.yml
+  - type: Security
+    url: https://github.com/orval-labs/orval/blob/master/SECURITY.md
+  - type: Conformance
+    url: conformance/orval-conformance.yml
+  - type: Sandbox
+    url: sandbox/orval-sandbox.yml
+  - type: Playground
+    url: https://orval.dev/playground
+  - type: AgentSkill
+    url: skills/_index.yml
+  - type: ContentSignal
+    url: well-known/orval-robots.txt
+  - type: License
+    url: https://github.com/orval-labs/orval/blob/master/LICENSE
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-06'
+  status: enriched
+  artifacts_added: 21
+  pass: local-v1
+x-surface:
+  note: >-
+    Orval is a build-time OpenAPI code generator, not an API provider. It hosts
+    no HTTP API, so openapi/, asyncapi/, graphql/, authentication/, scopes/,
+    errors/, data-model/, conventions/, mcp/ and a2a/ are correctly absent —
+    there is nothing to harvest, and nothing was invented to fill them. The
+    /.well-known/ probes all returned 404 and the A2A agent-card probe missed,
+    so no agent card was written. @orval/mcp GENERATES MCP servers for other
+    APIs; Orval does not operate one, so no MCPServer pointer is claimed.
+  checked: '2026-08-06'
