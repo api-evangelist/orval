@@ -1,0 +1,164 @@
+generated: '2026-08-06'
+method: searched
+source: https://registry.npmjs.org/orval
+description: >-
+  Orval is distributed as a single npm CLI package (`orval`) plus a set of
+  first-party scoped generator packages under the `@orval/*` namespace, all
+  released in lockstep from the orval-labs/orval monorepo. There is also an
+  official container image on GitHub Container Registry for teams pinned to a
+  Node LTS older than the 22.18 floor Orval 8 requires. NOTE: these are the
+  product itself (a code generator) — Orval publishes no HTTP API, so none of
+  these are API client SDKs.
+release_line:
+  latest: 8.23.0
+  latest_published: '2026-07-25'
+  channels:
+    latest: 8.23.0
+    next: 7.3.0
+    rc: 8.0.0-rc.6
+    alpha: 6.14.1
+  versions_published: 308
+  license: MIT
+  monorepo: https://github.com/orval-labs/orval
+packages:
+  - language: javascript
+    registry: npm
+    name: orval
+    url: https://www.npmjs.com/package/orval
+    install: npm install orval -D
+    version: 8.23.0
+    role: cli
+    description: The Orval CLI — a swagger/OpenAPI client generator for TypeScript.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@orval/core"
+    url: https://www.npmjs.com/package/@orval/core
+    install: npm install @orval/core -D
+    version: 8.23.0
+    role: core
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@orval/query"
+    url: https://www.npmjs.com/package/@orval/query
+    install: npm install @orval/query -D
+    version: 8.23.0
+    role: generator
+    description: TanStack Query (React/Vue/Svelte/Solid/Angular) output generator.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@orval/swr"
+    url: https://www.npmjs.com/package/@orval/swr
+    install: npm install @orval/swr -D
+    version: 8.23.0
+    role: generator
+    description: SWR hook output generator.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@orval/angular"
+    url: https://www.npmjs.com/package/@orval/angular
+    install: npm install @orval/angular -D
+    version: 8.23.0
+    role: generator
+    description: Angular HttpClient / httpResource service generator.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@orval/solid-start"
+    url: https://www.npmjs.com/package/@orval/solid-start
+    install: npm install @orval/solid-start -D
+    version: 8.23.0
+    role: generator
+    description: SolidStart query/action primitive generator.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@orval/hono"
+    url: https://www.npmjs.com/package/@orval/hono
+    install: npm install @orval/hono -D
+    version: 8.23.0
+    role: generator
+    description: Hono server template generator.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@orval/fetch"
+    url: https://www.npmjs.com/package/@orval/fetch
+    install: npm install @orval/fetch -D
+    version: 8.23.0
+    role: http-client
+    description: Fetch API HTTP client output (the Orval default).
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@orval/axios"
+    url: https://www.npmjs.com/package/@orval/axios
+    install: npm install @orval/axios -D
+    version: 8.23.0
+    role: http-client
+    description: Axios HTTP client output.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@orval/zod"
+    url: https://www.npmjs.com/package/@orval/zod
+    install: npm install @orval/zod -D
+    version: 8.23.0
+    role: generator
+    description: Zod schema generator (Zod v4 default since 8.19.0).
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@orval/effect"
+    url: https://www.npmjs.com/package/@orval/effect
+    install: npm install @orval/effect -D
+    version: 8.23.0
+    role: generator
+    description: Effect schema generator.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@orval/mock"
+    url: https://www.npmjs.com/package/@orval/mock
+    install: npm install @orval/mock -D
+    version: 8.23.0
+    role: generator
+    description: MSW handler and Faker mock-data generator.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@orval/mcp"
+    url: https://www.npmjs.com/package/@orval/mcp
+    install: npm install @orval/mcp -D
+    version: 8.23.0
+    role: generator
+    description: >-
+      Model Context Protocol server generator — emits an MCP server from an
+      OpenAPI spec. This generates MCP servers for OTHER APIs; Orval itself
+      does not host an MCP server.
+    official: true
+containers:
+  - registry: ghcr.io
+    image: ghcr.io/orval-labs/orval
+    run: docker run --rm -v "$(pwd):/app" -w /app ghcr.io/orval-labs/orval
+    pin_example: ghcr.io/orval-labs/orval:8.21.0
+    reason: >-
+      Orval 8+ requires Node.js 22.18 or newer; the image lets projects on an
+      older Node LTS run generation without a local install.
+    source: https://orval.dev/docs/installation
+    official: true
+not_found:
+  - registry: pypi
+    reason: Orval is a TypeScript/Node toolchain; no Python distribution exists.
+  - registry: crates.io
+    reason: No Rust distribution.
+x-evidence:
+  fetched: '2026-08-06'
+  urls:
+    - url: https://registry.npmjs.org/orval
+      http_status: 200
+    - url: https://api.github.com/repos/orval-labs/orval/contents/packages
+      http_status: 200

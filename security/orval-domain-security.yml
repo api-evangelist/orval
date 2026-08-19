@@ -1,11 +1,11 @@
-generated: '2026-07-11'
+generated: '2026-08-06'
 method: probed
 source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
 hosts:
 - host: orval.dev
   https: true
   tls_version: TLSv1.3
-  cert_expires: Aug 22 15:29:18 2026 GMT
+  cert_expires: Oct 20 16:02:12 2026 GMT
   hsts: false
 domains:
 - domain: orval.dev

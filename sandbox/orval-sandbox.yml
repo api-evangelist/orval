@@ -1,0 +1,58 @@
+generated: '2026-08-06'
+method: searched
+source: https://orval.dev/playground
+description: >-
+  Orval publishes a hosted, in-browser Playground — the try-before-install
+  surface for a CLI that otherwise requires a local Node toolchain. Paste or
+  select an OpenAPI specification and the generated TypeScript output renders
+  live. There are no credentials, keys, or test-mode values to capture: Orval
+  runs entirely against a spec document, so the "sandbox" is a code-generation
+  preview rather than a test-vs-live API environment.
+kind: playground
+sandbox:
+  - name: Orval Playground
+    url: https://orval.dev/playground
+    type: browser-playground
+    auth_required: false
+    signup_required: false
+    description: >-
+      "Try Orval in your browser. Generate type-safe TypeScript clients from
+      OpenAPI specifications instantly." (docs/site.config.json)
+    features:
+      - Example spec selector (ExampleSelector component)
+      - Editable spec + generated-output editor panes (EditorPanel component)
+      - Runs client-side against the pasted/selected OpenAPI document
+    source: https://github.com/orval-labs/orval/tree/master/docs/src/components/playground
+local_equivalents:
+  - name: Sample projects
+    url: https://github.com/orval-labs/orval/tree/master/samples
+    description: >-
+      Runnable sample projects per client/framework combination in the monorepo,
+      with committed __snapshots__ of the expected generated output.
+  - name: Petstore reference spec
+    url: https://petstore.swagger.io/v2/swagger.json
+    description: >-
+      The spec the docs use throughout as the worked example for input targets.
+    note: Third-party spec referenced by Orval's docs; not operated by Orval.
+  - name: Docker one-shot run
+    command: docker run --rm -v "$(pwd):/app" -w /app ghcr.io/orval-labs/orval
+    description: Run a generation without installing anything locally.
+test_credentials:
+  applicable: false
+  reason: >-
+    Orval has no hosted API, no accounts, and no keys. Nothing to capture — and
+    nothing was invented.
+x-evidence:
+  fetched: '2026-08-06'
+  urls:
+    - url: https://orval.dev/playground
+      http_status: 403
+      note: >-
+        Cloudflare managed challenge returns 403 to non-browser clients; the
+        page is real and reachable in a browser. Confirmed independently from
+        the provider's own llms.txt link list and docs/site.config.json.
+    - url: https://orval.dev/llms.txt
+      http_status: 200
+      note: Lists the Playground under Optional.
+    - url: https://raw.githubusercontent.com/orval-labs/orval/master/docs/site.config.json
+      http_status: 200

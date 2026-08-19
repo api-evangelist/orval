@@ -1,0 +1,94 @@
+generated: '2026-08-06'
+method: searched
+source: https://orval.dev/llms.txt
+description: >-
+  Orval consumes and emits specifications rather than serving an API, so its
+  conformance surface is the set of specification formats it reads on the input
+  side and the standards it targets on the output side. Every entry below is
+  evidenced from the provider's own docs, llms.txt, or monorepo package set —
+  nothing is asserted about a runtime API, because Orval has none.
+role: specification-tooling
+standards:
+  - id: openapi-3.1
+    conforms: true
+    role: input
+    evidence: >-
+      Docs state specs are upgraded to 3.1 internally and validated with
+      @scalar/openapi-parser (packages/core depends on @scalar/openapi-types).
+    source: https://orval.dev/docs/reference/configuration/input
+  - id: openapi-3.0
+    conforms: true
+    role: input
+    evidence: "llms.txt: 'any valid OpenAPI/Swagger specification (YAML or JSON)'."
+    source: https://orval.dev/llms.txt
+  - id: swagger-2.0
+    conforms: true
+    role: input
+    evidence: >-
+      OpenAPI 2.0 (Swagger) input is accepted and upgraded to 3.1; the
+      transformer hook still receives the original 2.0 document.
+    source: https://orval.dev/docs/reference/configuration/input
+  - id: json-schema
+    conforms: true
+    role: input-output
+    evidence: >-
+      Generates Zod and Effect schemas from OpenAPI/JSON Schema constructs,
+      including $ref, allOf/oneOf/anyOf composition, $dynamicAnchor resolution,
+      const/integer validation, and recursive reusable schemas.
+    source: https://orval.dev/docs/guides/zod
+  - id: mcp
+    conforms: true
+    role: output
+    evidence: >-
+      @orval/mcp generates Model Context Protocol servers from an OpenAPI spec.
+      Orval emits MCP servers for other APIs; it does not host one itself.
+    source: https://orval.dev/docs/guides/mcp
+  - id: ndjson
+    conforms: true
+    role: output
+    evidence: Type-safe Newline Delimited JSON streaming client generation.
+    source: https://orval.dev/docs/guides/stream-ndjson
+  - id: content-signals
+    conforms: true
+    role: publisher
+    evidence: >-
+      robots.txt publishes Cloudflare Content Signals (search=yes, ai-train=no,
+      use=reference) with an express Article 4 / EU 2019/790 rights reservation.
+    source: https://orval.dev/robots.txt
+  - id: semver
+    conforms: true
+    role: release
+    evidence: npm release line 8.23.0 with latest/next/rc/alpha dist-tags.
+    source: https://registry.npmjs.org/orval
+  - id: asyncapi
+    conforms: false
+    evidence: No AsyncAPI input or output generator exists in the package set.
+  - id: graphql
+    conforms: false
+    evidence: OpenAPI/Swagger only; no GraphQL input.
+  - id: oauth2
+    conforms: false
+    evidence: >-
+      Orval serves no API and defines no security schemes of its own. It can
+      generate clients that carry auth via custom mutators, but that is the
+      consumed API's scheme, not Orval's.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Not applicable — no HTTP error surface of Orval's own.
+compliance_program:
+  published: false
+  note: >-
+    No SOC 2, ISO 27001, PCI, HIPAA, or FedRAMP claims. Orval is a
+    community-maintained MIT project with no company entity or trust center.
+license:
+  spdx: MIT
+  url: https://github.com/orval-labs/orval/blob/master/LICENSE
+x-evidence:
+  fetched: '2026-08-06'
+  urls:
+    - url: https://orval.dev/llms.txt
+      http_status: 200
+    - url: https://raw.githubusercontent.com/orval-labs/orval/master/docs/content/docs/reference/configuration/input.mdx
+      http_status: 200
+    - url: https://api.github.com/repos/orval-labs/orval/contents/packages
+      http_status: 200

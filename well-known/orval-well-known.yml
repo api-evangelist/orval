@@ -1,0 +1,71 @@
+generated: '2026-08-06'
+method: probed
+source: live probes of https://orval.dev
+host: https://orval.dev
+description: >-
+  Orval has no API host — orval.dev serves only the documentation site — so the
+  /.well-known/ discovery surface is empty. Every RFC 8615 path probed returned
+  404 (an HTML 404 page, not an SPA catch-all 200). The one machine-readable
+  agent-consent document Orval does publish is /robots.txt, which carries
+  Cloudflare Content Signals plus an explicit AI-crawler block list; it is saved
+  verbatim here.
+documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /robots.txt
+    status: 200
+    file: orval-robots.txt
+    content_type: text/plain
+  - path: /llms.txt
+    status: 200
+    file: ../llms/orval-llms.txt
+    content_type: text/plain
+content_signals:
+  source: https://orval.dev/robots.txt
+  file: orval-robots.txt
+  managed_by: Cloudflare Managed Content
+  signal: "search=yes, ai-train=no, use=reference"
+  interpretation: >-
+    Orval permits search indexing and reference-level AI use, and reserves
+    rights against AI training. The reservation is framed as an express
+    reservation of rights under Article 4 of EU Directive 2019/790.
+  disallowed_agents:
+    - Amazonbot
+    - Applebot-Extended
+    - Bytespider
+    - CCBot
+    - ClaudeBot
+    - CloudflareBrowserRenderingCrawler
+    - Google-Extended
+    - GPTBot
+    - meta-externalagent
+  note: >-
+    The block list is agent-identity based and consistent with the ai-train=no
+    signal. Note the practical consequence for machine readers: orval.dev also
+    sits behind a Cloudflare managed challenge, so rendered docs pages return
+    403 to non-browser clients while /llms.txt and /robots.txt are served.
+x-evidence:
+  fetched: '2026-08-06'
+  urls:
+    - url: https://orval.dev/.well-known/security.txt
+      http_status: 404
+    - url: https://orval.dev/.well-known/agent-card.json
+      http_status: 404
+    - url: https://orval.dev/.well-known/api-catalog
+      http_status: 404
+    - url: https://orval.dev/robots.txt
+      http_status: 200
+    - url: https://orval.dev/llms.txt
+      http_status: 200

@@ -1,0 +1,78 @@
+generated: '2026-08-06'
+method: searched
+source: https://github.com/orval-labs/orval/tree/master/skills/orval
+description: >-
+  Orval publishes its own official AI agent skill set in-repo, distributed as a
+  Claude Code plugin marketplace (.claude-plugin/marketplace.json) and via
+  `npx skills add orval-labs/orval`. These files are saved VERBATIM from the
+  provider — API Evangelist did not author them. SKILL.md is the always-loaded
+  core skill; the remaining files are progressive-disclosure reference files the
+  agent loads on demand when the user's question matches the topic.
+distribution:
+  claude_code_plugin: /plugin marketplace add orval-labs/orval
+  skills_sh: npx skills add orval-labs/orval
+  marketplace_manifest: https://github.com/orval-labs/orval/blob/master/.claude-plugin/marketplace.json
+  readme: https://github.com/orval-labs/orval/blob/master/skills/README.md
+grounded_in: >-
+  The Orval CLI + configuration surface (orval.config.ts), not a hosted HTTP API.
+  Orval publishes no OpenAPI of its own, so these skills are grounded in the CLI
+  flags and config keys documented at https://orval.dev/docs/reference/cli and
+  https://orval.dev/docs/reference/configuration.
+skills:
+  - file: orval-skill.md
+    name: orval
+    role: core
+    description: >-
+      Generate type-safe API clients, TanStack Query/SWR hooks, Zod schemas, MSW
+      mocks, Hono server handlers, MCP servers, and SolidStart actions from
+      OpenAPI specs using Orval.
+    source: https://github.com/orval-labs/orval/blob/master/skills/orval/SKILL.md
+  - file: orval-tanstack-query.md
+    name: TanStack Query / SWR
+    role: reference
+    description: React/Vue/Svelte/Solid Query and SWR hook generation.
+    source: https://github.com/orval-labs/orval/blob/master/skills/orval/tanstack-query.md
+  - file: orval-angular.md
+    name: Angular
+    role: reference
+    description: Angular Query and HttpClient service generation.
+    source: https://github.com/orval-labs/orval/blob/master/skills/orval/angular.md
+  - file: orval-solid-start.md
+    name: SolidStart
+    role: reference
+    description: SolidStart query/action primitive generation.
+    source: https://github.com/orval-labs/orval/blob/master/skills/orval/solid-start.md
+  - file: orval-hono.md
+    name: Hono
+    role: reference
+    description: Hono server handler generation with response validation.
+    source: https://github.com/orval-labs/orval/blob/master/skills/orval/hono.md
+  - file: orval-custom-http-clients.md
+    name: Custom HTTP clients
+    role: reference
+    description: Custom mutators and authentication patterns.
+    source: https://github.com/orval-labs/orval/blob/master/skills/orval/custom-http-clients.md
+  - file: orval-zod-validation.md
+    name: Zod validation
+    role: reference
+    description: Zod schema generation from OpenAPI schemas.
+    source: https://github.com/orval-labs/orval/blob/master/skills/orval/zod-validation.md
+  - file: orval-mocking-msw.md
+    name: Mocking with MSW
+    role: reference
+    description: MSW mock handler generation and test setup.
+    source: https://github.com/orval-labs/orval/blob/master/skills/orval/mocking-msw.md
+  - file: orval-advanced-config.md
+    name: Advanced configuration
+    role: reference
+    description: Type generation, overrides, and enum extensions.
+    source: https://github.com/orval-labs/orval/blob/master/skills/orval/advanced-config.md
+  - file: orval-tooling-workflow.md
+    name: Tooling and workflow
+    role: reference
+    description: MCP server output, NDJSON streaming, hooks, and the programmatic API.
+    source: https://github.com/orval-labs/orval/blob/master/skills/orval/tooling-workflow.md
+x-evidence:
+  fetched: '2026-08-06'
+  url: https://api.github.com/repos/orval-labs/orval/contents/skills/orval
+  http_status: 200

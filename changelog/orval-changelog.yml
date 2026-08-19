@@ -1,0 +1,121 @@
+generated: '2026-08-06'
+method: searched
+source: https://github.com/orval-labs/orval/releases
+description: >-
+  Orval ships a dated, per-release changelog as GitHub Releases, one entry per
+  version with a categorized "What's Changed" list, PR links, contributor
+  attribution, and an auto-generated compare link. Breaking changes are called
+  out with a GitHub callout block at the top of the release body. The window
+  below is the recent set captured on 2026-08-06 — the live releases feed is the
+  source of truth.
+scheme: semver
+release_cadence: >-
+  Roughly weekly minor releases on the 8.x line through mid-2026; patches land
+  between minors.
+current:
+  version: 8.23.0
+  released: '2026-07-25'
+channels:
+  latest: 8.23.0
+  next: 7.3.0
+  rc: 8.0.0-rc.6
+  alpha: 6.14.1
+feeds:
+  releases: https://github.com/orval-labs/orval/releases
+  atom: https://github.com/orval-labs/orval/releases.atom
+  npm: https://www.npmjs.com/package/orval?activeTab=versions
+  migration_guides: https://orval.dev/docs/versions/v8
+entries:
+  - version: 8.23.0
+    date: '2026-07-25'
+    breaking: false
+    highlights:
+      - "feat(mock): emit MSW handlers and Faker factories as separate files in split modes"
+      - "feat: add exactOptional option for the zod and effect generators"
+      - "fix(zod): enforce integer validation; infer type from const primitive values"
+      - "fix(core): dotted path-parameter names generated a malformed request"
+      - "fix(orval): bump js-yaml to 4.3.0 to fix a DoS vulnerability"
+  - version: 8.22.0
+    date: '2026-07-14'
+    breaking: true
+    breaking_note: >-
+      Security fix — external $ref resolution is now gated behind an explicit
+      allow-list, so projects that relied on refs traversing directories must
+      configure input.externalRefs.
+    breaking_docs: https://orval.dev/docs/reference/configuration/input#externalrefs
+    highlights:
+      - "fix(core): gate external $ref resolution behind an explicit allow-list (PR 3723)"
+      - "fix(angular): send required nullable query params as empty string without a paramsSerializer"
+  - version: 8.21.0
+    date: '2026-07-12'
+    breaking: false
+    highlights:
+      - "fix(ci): trigger docker image publish on release"
+      - "fix(mock): inline enum values in mocks for union enumGenerationType"
+  - version: 8.20.0
+    date: '2026-07-03'
+    breaking: false
+    highlights:
+      - "fix(zod): emit hoisted sub-models for recursive reusable schemas"
+      - "fix(fetch): respect OpenAPI default explode: true for array query parameters"
+  - version: 8.19.0
+    date: '2026-06-24'
+    breaking: false
+    note: >-
+      Zod v4 became the default output; v3 remains available via a config change.
+    highlights:
+      - "Zod v4 is now the default generator target"
+      - "feat(core): add tagsSplitDeduplication option for barrel + shared type extraction"
+      - "feat(fetch): add paramsSerializer and arrayFormat support for query params"
+      - "build(angular): upgrade workspace to Angular 22"
+  - version: 8.18.0
+    date: '2026-06-18'
+    breaking: false
+    highlights:
+      - "fix(core): generate requiredNullableParamKeys only when preserveRequire is set"
+      - "fix(zod): resolve global zod mutators against the output workspace"
+  - version: 8.17.0
+    date: '2026-06-11'
+    breaking: false
+    highlights:
+      - "fix(query): include baseUrl in the mutationInvalidates broad-invalidation key"
+      - "fix(mock): emit strict mock types in tags-split MSW+faker output"
+  - version: 8.16.0
+    date: '2026-06-08'
+    breaking: false
+    highlights:
+      - "Code-scanning fix: workflows now declare explicit permissions"
+      - "fix(zod): emit preprocess mutator imports for query/param/header/body, not just response"
+  - version: 8.15.0
+    date: '2026-06-02'
+    breaking: false
+    highlights:
+      - "feat(security): add Socket.dev check on bun install"
+      - "docs: add Chinese localization"
+  - version: 8.14.0
+    date: '2026-05-29'
+    breaking: false
+    highlights:
+      - "fix(core): support CallExpression init in the mutator parser"
+  - version: 8.13.0
+    date: '2026-05-26'
+    breaking: false
+    highlights:
+      - "feat(mock): add Faker schema mock generation"
+      - "fix(core): extract named enum type for anyOf nullable enum composition"
+  - version: 8.12.3
+    date: '2026-05-22'
+    breaking: true
+    breaking_note: >-
+      output.mock now uses a generators array, with separate MSW and Faker
+      configs so either can be used on its own.
+    breaking_docs: https://orval.dev/docs/versions/v8#10-outputmock-now-uses-a-generators-array
+    highlights:
+      - "fix(mock): detect $ref in single-element allOf/oneOf/anyOf array items"
+x-evidence:
+  fetched: '2026-08-06'
+  urls:
+    - url: https://api.github.com/repos/orval-labs/orval/releases
+      http_status: 200
+    - url: https://github.com/orval-labs/orval/releases
+      http_status: 200

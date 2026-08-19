@@ -1,0 +1,101 @@
+generated: '2026-08-06'
+method: searched
+source: https://orval.dev/docs/reference/cli
+source_raw: https://raw.githubusercontent.com/orval-labs/orval/master/docs/content/docs/reference/cli.mdx
+description: >-
+  Orval IS a CLI — the command line generator is the product, not an accessory to
+  a hosted API. A single `orval` command reads a config file (default
+  `orval.config.js` / `orval.config.ts`) and emits TypeScript clients, hooks,
+  schemas, mocks, and server handlers from an OpenAPI v3 or Swagger v2 input.
+name: orval
+binary: orval
+requires:
+  node: ">=22.18"
+install:
+  - manager: npm
+    command: npm install orval -D
+  - manager: yarn
+    command: yarn add orval -D
+  - manager: pnpm
+    command: pnpm add orval -D
+  - manager: bun
+    command: bun add -d orval
+  - manager: docker
+    command: docker run --rm -v "$(pwd):/app" -w /app ghcr.io/orval-labs/orval
+    note: Official image for projects on a Node LTS older than 22.18.
+commands:
+  - command: orval
+    description: >-
+      The only command. With no arguments it searches for an orval.config.js in
+      the working directory and generates every project defined in it.
+flags:
+  - flag: "--input"
+    short: "-i"
+    description: Path or URL to the OpenAPI/Swagger specification.
+    example: orval --input ./petstore.yaml
+  - flag: "--output"
+    short: "-o"
+    description: Output path for the generated files.
+    example: orval --output ./api/endpoints/petstoreFromFileSpec.ts
+  - flag: "--config"
+    short: "-c"
+    description: Path to the Orval config file.
+    example: orval --config ./api/orval.config.js
+  - flag: "--project"
+    short: "-p"
+    description: Restrict generation to one or more named projects in the config.
+    example: orval --project dogstore catstore
+  - flag: "--watch"
+    short: "-w"
+    description: Watch files and regenerate on change; optionally scoped to a path.
+    example: orval --watch ./src
+  - flag: "--clean"
+    description: >-
+      Clean the output target and schema folders before regenerating. Docs carry
+      an explicit warning that this removes ALL output target and schema folders.
+    example: orval --clean ./src
+  - flag: "--formatter"
+    description: Format generated files with prettier, biome, or oxfmt.
+    values: [prettier, biome, oxfmt]
+    example: orval --formatter biome
+  - flag: "--tsconfig"
+    description: Path to the tsconfig to resolve against.
+    example: orval --tsconfig ./src/tsconfig.json
+  - flag: "--verbose"
+    description: Verbose logging, including detected dependency versions.
+  - flag: "--fail-on-warnings"
+    description: >-
+      Exit 1 when warnings are emitted during generation — the CI switch for
+      enforcing warning-free builds.
+programmatic_api:
+  docs: https://orval.dev/docs/reference/integration
+  entrypoints:
+    - "import orval from 'orval'; await orval('./orval.config.js')"
+    - "import { generate } from 'orval'; await generate('./orval.config.js')"
+    - "import { generate, type Options } from 'orval'; await generate(configObject)"
+  note: >-
+    Global options can be overridden per call; the GlobalOptions interface lives
+    in packages/core/src/types.ts in the monorepo.
+hooks:
+  docs: https://orval.dev/docs/reference/configuration/hooks
+  events:
+    - name: afterAllFilesWrite
+      description: >-
+        Runs after Orval writes generated files; generated paths are injected as
+        arguments unless injectGeneratedDirsAndFiles is set false.
+config:
+  default_files: [orval.config.js, orval.config.ts]
+  helper: defineConfig
+  docs: https://orval.dev/docs/reference/configuration
+x-evidence:
+  fetched: '2026-08-06'
+  urls:
+    - url: https://raw.githubusercontent.com/orval-labs/orval/master/docs/content/docs/reference/cli.mdx
+      http_status: 200
+    - url: https://raw.githubusercontent.com/orval-labs/orval/master/docs/content/docs/installation.mdx
+      http_status: 200
+    - url: https://orval.dev/docs/reference/cli.md
+      http_status: 403
+      note: >-
+        The rendered docs host sits behind a Cloudflare managed challenge for
+        non-browser clients; the .mdx source in the public repo was used instead.

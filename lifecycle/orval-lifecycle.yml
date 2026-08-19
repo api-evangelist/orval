@@ -1,0 +1,77 @@
+generated: '2026-08-06'
+method: searched
+source: https://github.com/orval-labs/orval/blob/master/SECURITY.md
+description: >-
+  Orval is an MIT-licensed open source code generator, so its lifecycle surface
+  is a release-and-support policy for a distributed package rather than an
+  uptime contract for a hosted service. Versioning is semver on npm; the
+  supported-versions policy is published in SECURITY.md; major-version breaks
+  get a dedicated migration guide in the docs.
+versioning:
+  scheme: semver
+  current: 8.23.0
+  current_major: v8
+  released: '2026-07-25'
+  registry: https://www.npmjs.com/package/orval?activeTab=versions
+  channels: [latest, next, rc, alpha]
+support_policy:
+  url: https://github.com/orval-labs/orval/blob/master/SECURITY.md#supported-versions
+  tiers:
+    - version_class: Latest major release
+      supported: true
+      note: Full support.
+    - version_class: Previous major release
+      supported: partial
+      note: Security fixes only.
+    - version_class: Older releases
+      supported: false
+      note: End of life — no fixes.
+  guidance: >-
+    "Security fixes are applied only to supported versions. Users are strongly
+    encouraged to upgrade to the latest release whenever possible." (SECURITY.md)
+deprecation:
+  policy_url: https://github.com/orval-labs/orval/blob/master/SECURITY.md#supported-versions
+  sunset_header: false
+  note: >-
+    No RFC 8594 Sunset/Deprecation headers — there is no hosted API to carry
+    them. Deprecation is expressed as the major-release support ladder above,
+    plus explicit BREAKING CHANGE callouts in the GitHub release body and a
+    per-major migration guide.
+  migration_guides:
+    - version: v8
+      url: https://orval.dev/docs/versions/v8
+  recent_breaking_changes:
+    - version: 8.22.0
+      date: '2026-07-14'
+      change: External $ref resolution gated behind an explicit allow-list (security fix).
+      docs: https://orval.dev/docs/reference/configuration/input#externalrefs
+    - version: 8.12.3
+      date: '2026-05-22'
+      change: output.mock now uses a generators array with separate MSW and Faker configs.
+      docs: https://orval.dev/docs/versions/v8#10-outputmock-now-uses-a-generators-array
+runtime_requirements:
+  node: ">=22.18 (Orval 8+)"
+  fallback: >-
+    Official ghcr.io/orval-labs/orval container image for projects pinned to an
+    older Node LTS.
+sla:
+  published: false
+  note: Community open source project; no SLA and no paid support tier published.
+status_page:
+  published: false
+  note: >-
+    No status page found. Orval hosts no runtime service — the docs site
+    (orval.dev) and npm/ghcr registries are the only availability surfaces, and
+    none of them carry an Orval-operated status page.
+deprecated_operations: []
+funding:
+  open_collective: https://opencollective.com/orval
+x-evidence:
+  fetched: '2026-08-06'
+  urls:
+    - url: https://raw.githubusercontent.com/orval-labs/orval/master/SECURITY.md
+      http_status: 200
+    - url: https://api.github.com/repos/orval-labs/orval/releases
+      http_status: 200
+    - url: https://registry.npmjs.org/orval
+      http_status: 200
