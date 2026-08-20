@@ -37,6 +37,17 @@ tags:
   - Code Generation
   - OpenAPI
   - Swagger
+  - SDK
+  - TypeScript
+  - Developer Tools
+  - CLI
+  - Open-Source
+  - Mocking
+  - Schema Validation
+tags_raw:
+  - Code Generation
+  - OpenAPI
+  - Swagger
   - SDKs
   - TypeScript
   - Developer Tools
@@ -61,6 +72,10 @@ apis:
       service.
     humanURL: https://orval.dev
     tags:
+      - Code Generation
+      - SDK
+      - TypeScript
+    tags_raw:
       - Code Generation
       - SDKs
       - TypeScript
