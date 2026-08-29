@@ -124,7 +124,7 @@ common:
     url: https://discord.gg/6fC2sjDU7w
   - type: Support
     url: https://github.com/orval-labs/orval/discussions
-  - type: Samples
+  - type: Examples
     url: https://orval.dev/docs/guides/react-query
   - type: LlmsText
     url: https://orval.dev/llms.txt
