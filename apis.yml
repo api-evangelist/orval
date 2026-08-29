@@ -15,6 +15,17 @@ description: >-
   hosted HTTP API — the specification is the input, and generated client code
   is the product.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: self-service
@@ -89,6 +100,12 @@ apis:
       - type: GitHubRepository
         url: https://github.com/orval-labs/orval
 common:
+  - type: IssueTracker
+    url: https://github.com/orval-labs/orval/issues
+  - type: CodeOfConduct
+    url: https://github.com/orval-labs/orval/blob/master/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/orval-labs/orval/blob/master/CONTRIBUTING.md
   - type: DomainSecurity
     url: security/orval-domain-security.yml
   - type: Website
