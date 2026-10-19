@@ -1,0 +1,139 @@
+edges:
+- partner_name: npm registry
+  partner: npm
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: official SDK (JavaScript/TypeScript)
+  evidence: https://www.npmjs.com/package/@orval/angular
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: npm registry (public registry JSON)
+    spec_file: null
+    language: JavaScript/TypeScript
+    packages:
+    - name: '@orval/angular'
+      version: 8.43.0
+      released: '2026-10-14'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@orval/angular
+      repo_leg: domain:orval.dev
+      publisher_leg: org:orval
+      matched_by: domain
+    - name: '@orval/axios'
+      version: 8.43.0
+      released: '2026-10-14'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@orval/axios
+      repo_leg: domain:orval.dev
+      publisher_leg: org:orval
+      matched_by: domain
+    - name: '@orval/core'
+      version: 8.43.0
+      released: '2026-10-14'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@orval/core
+      repo_leg: domain:orval.dev
+      publisher_leg: org:orval
+      matched_by: domain
+    - name: '@orval/effect'
+      version: 8.43.0
+      released: '2026-10-14'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@orval/effect
+      repo_leg: domain:orval.dev
+      publisher_leg: org:orval
+      matched_by: domain
+    - name: '@orval/fetch'
+      version: 8.43.0
+      released: '2026-10-14'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@orval/fetch
+      repo_leg: domain:orval.dev
+      publisher_leg: org:orval
+      matched_by: domain
+    - name: '@orval/hono'
+      version: 8.43.0
+      released: '2026-10-14'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@orval/hono
+      repo_leg: domain:orval.dev
+      publisher_leg: org:orval
+      matched_by: domain
+    - name: '@orval/mock'
+      version: 8.43.0
+      released: '2026-10-14'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@orval/mock
+      repo_leg: domain:orval.dev
+      publisher_leg: org:orval
+      matched_by: domain
+    - name: '@orval/query'
+      version: 8.43.0
+      released: '2026-10-14'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@orval/query
+      repo_leg: domain:orval.dev
+      publisher_leg: org:orval
+      matched_by: domain
+    - name: '@orval/solid-start'
+      version: 8.43.0
+      released: '2026-10-14'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@orval/solid-start
+      repo_leg: domain:orval.dev
+      publisher_leg: org:orval
+      matched_by: domain
+    - name: '@orval/swr'
+      version: 8.43.0
+      released: '2026-10-14'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@orval/swr
+      repo_leg: domain:orval.dev
+      publisher_leg: org:orval
+      matched_by: domain
+    - name: '@orval/zod'
+      version: 8.43.0
+      released: '2026-10-14'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@orval/zod
+      repo_leg: domain:orval.dev
+      publisher_leg: org:orval
+      matched_by: domain
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  detected_by: sweep-official-sdks.py
+  first_seen: '2026-10-18'
+generated: '2026-10-18'
+method: searched
+source:
+- https://api.nuget.org/v3
+- https://crates.io/api/v1
+- https://proxy.golang.org
+- https://pypi.org/pypi
+- https://registry.npmjs.org
+- https://repo1.maven.org/maven2
+- https://rubygems.org/api/v1
+checked:
+- https://api.nuget.org/v3
+- https://crates.io/api/v1
+- https://proxy.golang.org
+- https://pypi.org/pypi
+- https://registry.npmjs.org
+- https://repo1.maven.org/maven2
+- https://rubygems.org/api/v1
