@@ -64,33 +64,109 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Orval is an open source tool that generates TypeScript API clients, React Query hooks, Angular services, and mock service workers from OpenAPI specifications. It produces type-safe, framework-integrated code with support for custom transformers and output formats.
+Orval is an MIT-licensed open source code generator that turns any valid OpenAPI v3 or Swagger v2 specification into type-safe TypeScript. From one spec it emits HTTP request functions (Fetch by default, Axios optional), TanStack Query hooks for React, Vue, Svelte, Solid and Angular, SWR hooks, Angular HttpClient services, SolidStart primitives, Hono server templates, Zod and Effect validation schemas, MSW handlers with Faker mock data, and Model Context Protocol servers for agent integration. It ships as a CLI plus a programmatic API, is configured through an orval.config.ts file with per-project targets, transformers, hooks and output modes, and is distributed on npm as `orval` alongside thirteen first-party `@orval/*` generator packages and an official ghcr.io container image. Orval itself exposes no hosted HTTP API — the specification is the input, and generated client code is the product.
 
-**APIs.json:** https://raw.githubusercontent.com/api-evangelist/orval/refs/heads/main/apis.yml
+**Areas:** Code Generation · OpenAPI · Swagger · SDK · TypeScript · Developer Tools · CLI · Open Source · Mocking · Schema Validation · SDK Generation
 
-## Tags
+## Orval on APIs.io
 
-Code Generation, OpenAPI, SDKs, TypeScript
+Everything profiled for Orval is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/orval/](https://apis.io/providers/orval/)** — or go straight to one of the APIs or properties below.
 
-## APIs
+### APIs (1)
 
-Orval is a CLI / library tool, not a hosted API. It consumes OpenAPI specifications and emits client code; it does not expose a REST API of its own. No OpenAPI artifact is published in this repository.
+- [Orval](https://apis.io/apis/orval/orval/) — Orval generates TypeScript API clients, TanStack Query/SWR hooks, Angular services, SolidStart primitives, Hono server handlers, Zod and Effect schemas, MSW…
 
-| Reference | URL |
-|-----------|-----|
-| Documentation | https://orval.dev/overview |
-| Getting Started | https://orval.dev/overview |
-| GitHub Repository | https://github.com/orval-labs/orval |
+### Published properties
 
-## Common Properties
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Property | URL |
-|----------|-----|
-| Website | https://orval.dev |
-| Documentation | https://orval.dev/overview |
-| GitHub Organization | https://github.com/orval-labs/orval |
-| Samples | https://orval.dev/guides/react-query |
+#### Security (2)
 
-## Maintainers
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Kin Lane** — kin@apievangelist.com
+- [Orval Domain Security](https://apis.io/security/orval/orval-domain-security/)
+- [Orval Vulnerability Disclosure](https://apis.io/security/orval/orval-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Orval Plans Pricing](https://apis.io/plans/orval/orval-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Orval Rate Limits](https://apis.io/rate-limits/orval/orval-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Orval Finops](https://apis.io/finops/orval/orval-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://orval.dev)
+- [Documentation](https://orval.dev/docs)
+- [Getting started](https://orval.dev/docs/quick-start)
+- [API reference](https://orval.dev/docs/reference/cli)
+- [Support](https://discord.gg/6fC2sjDU7w)
+- [Changelog](https://github.com/orval-labs/orval/releases)
+- [Security](https://github.com/orval-labs/orval/blob/master/SECURITY.md)
+- [GitHub](https://github.com/orval-labs/orval)
+
+## API Evangelist rating
+
+**Kin Score 37.0** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 6.5 |
+| Contract governance | 18.2 |
+| Operational transparency | 44.7 |
+| Developer ergonomics | 60.7 |
+| Access clarity | 7.9 |
+
+**Agent readiness 7.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | yes |
+| Well Known Catalog | — |
+| Consent Identity | yes |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/orval/](https://apis.io/providers/orval/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Orval: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/orval/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
